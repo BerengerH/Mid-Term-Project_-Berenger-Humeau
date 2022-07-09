@@ -172,6 +172,11 @@ h4 {
 }
 
 /*--------------------------------------SECTION 2 - LOGO SECTION----------------------------------------*/
+.logo-section{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 150px;
+}
 
 /*--------------------------------------SECTION 3 - PROJECT SECTION----------------------------------------*/
 
@@ -244,6 +249,38 @@ h4 {
   }
 }
 
+/*---SECTION 2 - LOGO SECTION---*/
+.logo-section{
+  flex-wrap: wrap;
+  margin: 120px 70px;
+  gap: 100px;
+}
+
+.logo-amazon{
+  display: none;
+}
+
+.logo-airbnb{
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+.logo-google{
+  grid-column: 4 / 5;
+  grid-row: 1;
+}
+
+.logo-microsoft{
+  grid-column: 2 / 3;
+  grid-row: 2;
+}
+
+.logo-fedex{
+  grid-column: 4 / 5;
+  grid-row: 2;
+}
+
+
 /*------------------------------------------------- MEDIA QUERIES Mobile max-width 420px----------------------------------------------*/
 @media (max-width: 420px) {
   h1 {
@@ -266,9 +303,6 @@ h4 {
     margin: 0px 30px;
   }
 
-  .hero-article {
-  }
-
   .hero-article-links {
     flex-direction: column-reverse;
     align-items: center;
@@ -282,4 +316,28 @@ h4 {
   .thumb-img {
     display: none;
   }
+
+/*---SECTION 2 - LOGO SECTION---*/
+.logo-section{
+  flex-wrap: wrap;
+  margin: 80px 30px;
+  gap: 70px;
+}
+
+.logo-airbnb{
+  grid-column: 1 / 2;
+}
+
+.logo-google{
+  grid-column: 2 / 3;
+}
+
+.logo-microsoft{
+  grid-column: 1 / 2;
+}
+
+.logo-fedex{
+  grid-column: 2 / 3;
+}
+
 }
