@@ -101,7 +101,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 70px 150px;
+  margin: 70px 140px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -148,7 +148,7 @@ h4 {
 .hero-section {
   display: flex;
   align-items: center;
-  margin: 50px 150px;
+  margin: 50px 140px;
   padding-top: 50px;
   gap: 60px;
 }
@@ -175,10 +175,50 @@ h4 {
 .logo-section{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin: 150px;
+  margin: 140px;
 }
 
 /*--------------------------------------SECTION 3 - PROJECT SECTION----------------------------------------*/
+.project-section{
+  margin: 200px 140px;
+}
+
+.project-section h3 {
+  color: #292e47;
+  margin-bottom: 70px;
+}
+
+.project-section a{
+  color: #072ac8;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.project-div{
+  display: flex;
+  flex-flow: wrap;
+  gap: 30px;
+}
+
+.individual-project{
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.individual-project .body-medium{
+  margin: 30px 30px 10px;
+}
+
+.individual-project .headline-regular{
+  margin-left: 30px;
+}
+
+.project-img{
+  height: 240px;
+  width: 340px;
+  object-fit: cover;
+}
 
 /*--------------------------------------SECTION 4 - TESTIMONIAL SECTION----------------------------------------*/
 
@@ -229,13 +269,13 @@ h4 {
   }
 
   .nav-bar {
-    margin: 50px 70px;
+    margin: 50px 50px;
   }
 
   /*---SECTION 1 - HERO SECTION---*/
   .hero-section {
     flex-flow: wrap;
-    margin: 50px 70px;
+    margin: 50px 50px;
   }
 
   .hero-article {
@@ -247,12 +287,11 @@ h4 {
   .hero-images {
     max-width: 100%;
   }
-}
 
-/*---SECTION 2 - LOGO SECTION---*/
+  /*---SECTION 2 - LOGO SECTION---*/
 .logo-section{
   flex-wrap: wrap;
-  margin: 120px 70px;
+  margin: 120px 50px;
   gap: 100px;
 }
 
@@ -278,6 +317,18 @@ h4 {
 .logo-fedex{
   grid-column: 4 / 5;
   grid-row: 2;
+}
+
+/*---SECTION 3 - PROJECT SECTION---*/
+.project-section{
+  margin: 130px 50px;
+}
+
+.project-section h3 {
+  margin-bottom: 50px;
+}
+
+
 }
 
 
@@ -338,6 +389,22 @@ h4 {
 
 .logo-fedex{
   grid-column: 2 / 3;
+}
+
+
+/*---SECTION 3 - PROJECT SECTION---*/
+.project-section{
+  margin: 90px 30px;
+}
+
+.project-section h3 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.project-img{
+  max-width: 100%;
 }
 
 }
