@@ -24,6 +24,7 @@ a:active {
 
 .btn:hover {
   background-color: #292e47;
+  cursor: pointer;
 }
 
 .learn-more{
@@ -35,6 +36,7 @@ a:active {
 
 /*--------------------------------------FONT styles, weight ...----------------------------------------*/
 h1 {
+  color: #292e47;
   font-size: 60px;
   font-weight: 700;
   line-height: 70px;
@@ -49,6 +51,7 @@ h2 {
 }
 
 h3 {
+  color: #292e47;
   font-size: 40px;
   font-weight: 700;
   line-height: 46px;
@@ -63,6 +66,7 @@ h4 {
 }
 
 .body-regular {
+  color: #292e47;
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
@@ -175,10 +179,6 @@ h4 {
   gap: 40px;
 }
 
-.hero-article h1 {
-  color: #292e47;
-}
-
 .hero-article-links {
   display: flex;
   align-items: baseline;
@@ -198,7 +198,6 @@ h4 {
 }
 
 .project-section h3 {
-  color: #292e47;
   margin-bottom: 70px;
 }
 
@@ -323,7 +322,6 @@ h4 {
 }
 
 .services-section h3 {
-  color: #292e47;
   margin-bottom: 70px;
 }
 
@@ -364,6 +362,52 @@ h4 {
 
 
 /*--------------------------------------SECTION 6 - SUBSCRIBE SECTION----------------------------------------*/
+.subscribe-section{
+  background-color: #FFC600;
+  height: 450px;
+  max-width: 95%;
+  margin: 0px auto 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.email-div{
+  background-color: #ffffff;
+  height: 70px;
+  width: 380px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.email-img{
+  height: 30px;
+  width: 30px;
+  margin-left: 20px;
+}
+
+.email-input{
+  border: none;
+  height: 95%;
+  width: 90%;
+}
+
+.subscribe-form{
+  display: flex;
+  gap: 20px;
+}
+
+.subscribe-btn{
+  padding: 15px 60px;
+}
+
+.subscribe-text{
+  margin: 20px 0px 50px;
+}
+
 
 /*--------------------------------------FOOTER SECTION----------------------------------------*/
 
@@ -503,6 +547,27 @@ h4 {
   .testimonial-section {
     max-width: 100%;
   }
+
+/*---SECTION 5 - SERVICE SECTION---*/
+.individual-service {
+  width: 100%;
+}
+
+/*---CTION 6 - SUBSCRIBE SECTION---*/
+.subscribe-section{
+  max-width: 100%;
+  margin: 0px auto 100px;
+}
+
+.subscribe-form{
+  flex-direction: column;
+  gap: 20px;
+}
+
+.subscribe-btn{
+  height: 70px;
+}
+
 }
 
 /*------------------------------------------------- MEDIA QUERIES Mobile max-width 420px----------------------------------------------*/
@@ -579,7 +644,7 @@ h4 {
     max-width: 100%;
   }
 
-/*---SECTION 5 - SERVICE SECTION---*/
+/*---SECTION 5 - SERVICES SECTION---*/
 .services-section{
   margin: 50px 30px;
 }
@@ -588,9 +653,17 @@ h4 {
   margin-bottom: 30px;
 }
 
-.individual-service {
-  width: 100%;
+/*---CTION 6 - SUBSCRIBE SECTION---*/
+.subscribe-section{
+  margin-bottom: 50px;
 }
 
+.email-div{
+  width: 95%;
+}
+
+.subscribe-btn{
+  width: 95%;
+}
 
 }
