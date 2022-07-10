@@ -83,7 +83,14 @@ h4 {
   margin: 0;
 }
 
-/*--------------------------------------HEADER SECTION----------------------------------------*/
+.caption2-regular {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 0;
+}
+
+/*--------------------------------------NAV SECTION----------------------------------------*/
 .burger {
   display: none;
   cursor: pointer;
@@ -101,7 +108,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 70px 140px;
+  margin: 70px 100px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -148,7 +155,7 @@ h4 {
 .hero-section {
   display: flex;
   align-items: center;
-  margin: 50px 140px;
+  margin: 50px 100px;
   padding-top: 50px;
   gap: 60px;
 }
@@ -172,15 +179,15 @@ h4 {
 }
 
 /*--------------------------------------SECTION 2 - LOGO SECTION----------------------------------------*/
-.logo-section{
+.logo-section {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin: 140px;
+  margin: 100px;
 }
 
 /*--------------------------------------SECTION 3 - PROJECT SECTION----------------------------------------*/
-.project-section{
-  margin: 200px 140px;
+.project-section {
+  margin: 200px 100px;
 }
 
 .project-section h3 {
@@ -188,39 +195,116 @@ h4 {
   margin-bottom: 70px;
 }
 
-.project-section a{
+.project-section a {
   color: #072ac8;
   cursor: pointer;
   margin: 30px;
 }
 
-.project-div{
+.project-div {
   display: flex;
   flex-flow: wrap;
   gap: 30px;
 }
 
-.individual-project{
+.individual-project {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
 }
 
-.individual-project .body-medium{
+.individual-project .body-medium {
   margin: 30px 30px 10px;
 }
 
-.individual-project .headline-regular{
+.individual-project .headline-regular {
   margin-left: 30px;
 }
 
-.project-img{
+.project-img {
   height: 240px;
   width: 340px;
   object-fit: cover;
 }
 
 /*--------------------------------------SECTION 4 - TESTIMONIAL SECTION----------------------------------------*/
+.testimonial-section {
+  background-color: #292e47;
+  background-image: url("/images/testimonial-section/orbit.png");
+  background-position: center;
+  background-size: contain;
+  height: 600px;
+  max-width: 95%;
+  margin: 0px auto 200px;
+  position: relative;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 130px;
+  height: 100%;
+  max-width: 55%;
+  margin: auto;
+}
+
+.testimonial-emoji {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+}
+
+.emoji-top-left {
+  left: 7%;
+  bottom: 75%;
+}
+
+.emoji-bottom-left {
+  left: 7%;
+  bottom: 18%;
+}
+
+.emoji-top-right {
+  left: 82%;
+  bottom: 75%;
+}
+
+.emoji-bottom-right {
+  left: 82%;
+  bottom: 18%;
+}
+
+.testimonial-profile-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.testimonial-section h3 {
+  color: #f4f6fc;
+  text-align: center;
+}
+
+.testimonial-section .body-medium {
+  color: #ffc600;
+  text-align: center;
+}
+
+.testimonial-section .headline-regular {
+  color: #a2d6f9;
+}
+
+.testimonial-section .caption2-regular {
+  color: #f4f6fc;
+}
 
 /*--------------------------------------SECTION 5 - SERVICE SECTION----------------------------------------*/
 
@@ -289,48 +373,67 @@ h4 {
   }
 
   /*---SECTION 2 - LOGO SECTION---*/
-.logo-section{
-  flex-wrap: wrap;
-  margin: 120px 50px;
-  gap: 100px;
+  .logo-section {
+    flex-wrap: wrap;
+    margin: 120px 50px;
+    gap: 100px;
+  }
+
+  .logo-amazon {
+    display: none;
+  }
+
+  .logo-airbnb {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+
+  .logo-google {
+    grid-column: 4 / 5;
+    grid-row: 1;
+  }
+
+  .logo-microsoft {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  .logo-fedex {
+    grid-column: 4 / 5;
+    grid-row: 2;
+  }
+
+  /*---SECTION 3 - PROJECT SECTION---*/
+  .project-section {
+    margin: 130px 50px;
+  }
+
+  .project-section h3 {
+    margin-bottom: 50px;
+  }
+
+  /*---SECTION 4 - TESTIMONIAL SECTION---*/
+  .testimonial-section {
+    margin-bottom: 100px;
+  }
 }
 
-.logo-amazon{
-  display: none;
+/*------------------------------------------------- MEDIA QUERIES Mobile max-width 760px----------------------------------------------*/
+@media (max-width: 760px) {
+  /*---SECTION 4 - TESTIMONIAL SECTION---*/
+  .testimonial-container {
+    gap: 90px;
+    max-width: 90%;
+  }
+
+  .testimonial-emoji {
+    display: none;
+  }
+
+  .testimonial-section {
+    max-width: 100%;
+  }
 }
-
-.logo-airbnb{
-  grid-column: 2 / 3;
-  grid-row: 1;
-}
-
-.logo-google{
-  grid-column: 4 / 5;
-  grid-row: 1;
-}
-
-.logo-microsoft{
-  grid-column: 2 / 3;
-  grid-row: 2;
-}
-
-.logo-fedex{
-  grid-column: 4 / 5;
-  grid-row: 2;
-}
-
-/*---SECTION 3 - PROJECT SECTION---*/
-.project-section{
-  margin: 130px 50px;
-}
-
-.project-section h3 {
-  margin-bottom: 50px;
-}
-
-
-}
-
 
 /*------------------------------------------------- MEDIA QUERIES Mobile max-width 420px----------------------------------------------*/
 @media (max-width: 420px) {
@@ -368,43 +471,41 @@ h4 {
     display: none;
   }
 
-/*---SECTION 2 - LOGO SECTION---*/
-.logo-section{
-  flex-wrap: wrap;
-  margin: 80px 30px;
-  gap: 70px;
-}
+  /*---SECTION 2 - LOGO SECTION---*/
+  .logo-section {
+    flex-wrap: wrap;
+    margin: 80px 30px;
+    gap: 70px;
+  }
 
-.logo-airbnb{
-  grid-column: 1 / 2;
-}
+  .logo-airbnb {
+    grid-column: 1 / 2;
+  }
 
-.logo-google{
-  grid-column: 2 / 3;
-}
+  .logo-google {
+    grid-column: 2 / 3;
+  }
 
-.logo-microsoft{
-  grid-column: 1 / 2;
-}
+  .logo-microsoft {
+    grid-column: 1 / 2;
+  }
 
-.logo-fedex{
-  grid-column: 2 / 3;
-}
+  .logo-fedex {
+    grid-column: 2 / 3;
+  }
 
+  /*---SECTION 3 - PROJECT SECTION---*/
+  .project-section {
+    margin: 90px 30px;
+  }
 
-/*---SECTION 3 - PROJECT SECTION---*/
-.project-section{
-  margin: 90px 30px;
-}
+  .project-section h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
 
-.project-section h3 {
-  font-size: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.project-img{
-  max-width: 100%;
-}
-
+  .project-img {
+    max-width: 100%;
+  }
 }
