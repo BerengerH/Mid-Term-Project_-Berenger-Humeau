@@ -26,6 +26,13 @@ a:active {
   background-color: #292e47;
 }
 
+.learn-more{
+  color: #072ac8;
+  cursor: pointer;
+  margin: 30px;
+}
+
+
 /*--------------------------------------FONT styles, weight ...----------------------------------------*/
 h1 {
   font-size: 60px;
@@ -195,12 +202,6 @@ h4 {
   margin-bottom: 70px;
 }
 
-.project-section a {
-  color: #072ac8;
-  cursor: pointer;
-  margin: 30px;
-}
-
 .project-div {
   display: flex;
   flex-flow: wrap;
@@ -307,6 +308,60 @@ h4 {
 }
 
 /*--------------------------------------SECTION 5 - SERVICE SECTION----------------------------------------*/
+.services-section {
+  margin: 200px 100px;
+}
+
+.services-section .body-medium {
+  color: #292e47;
+  margin: 0px 30px;
+}
+
+.services-section .headline-regular {
+  color: #6B708D;
+  margin: 10px 30px 0px;
+}
+
+.services-section h3 {
+  color: #292e47;
+  margin-bottom: 70px;
+}
+
+.services-div {
+  display: flex;
+  flex-flow: wrap;
+  gap: 30px;
+}
+
+.individual-service {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 31%;
+}
+
+.services-image {
+  background-color: #ECF7FF;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  margin: 40px 30px;
+}
+
+.service-img-1 {
+  background-image: url("/images/services-section/1.svg");
+}
+
+.service-img-2 {
+  background-image: url("/images/services-section/2.svg");
+}
+
+.service-img-3 {
+  background-image: url("/images/services-section/3.svg");
+}
+
 
 /*--------------------------------------SECTION 6 - SUBSCRIBE SECTION----------------------------------------*/
 
@@ -416,6 +471,21 @@ h4 {
   .testimonial-section {
     margin-bottom: 100px;
   }
+
+
+/*---SECTION 5 - SERVICE SECTION---*/
+.services-section{
+  margin: 100px 50px;
+}
+
+.services-section h3 {
+  margin-bottom: 50px;
+}
+
+.individual-service {
+  width: 45%;
+}
+
 }
 
 /*------------------------------------------------- MEDIA QUERIES Mobile max-width 760px----------------------------------------------*/
@@ -508,4 +578,19 @@ h4 {
   .project-img {
     max-width: 100%;
   }
+
+/*---SECTION 5 - SERVICE SECTION---*/
+.services-section{
+  margin: 50px 30px;
+}
+
+.services-section h3 {
+  margin-bottom: 30px;
+}
+
+.individual-service {
+  width: 100%;
+}
+
+
 }
