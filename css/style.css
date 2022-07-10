@@ -6,11 +6,11 @@ body {
   color: #514d67;
 }
 
-a,
-a:active {
+a {
   text-decoration: none;
-  color: inherit;
-  transition: 0.5s ease;
+  color: #072ac8;
+  cursor: pointer;
+  margin: 30px;
 }
 
 .btn {
@@ -27,10 +27,9 @@ a:active {
   cursor: pointer;
 }
 
-.learn-more{
-  color: #072ac8;
-  cursor: pointer;
-  margin: 30px;
+.circle-logo{
+  height: 30px;
+  width: 100px;
 }
 
 
@@ -122,6 +121,12 @@ h4 {
   margin: 70px 100px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.nav-link,
+.nav-link:active {
+  color: inherit;
+  transition: 0.5s ease;
 }
 
 .nav-menu > li > a:hover {
@@ -409,7 +414,30 @@ h4 {
 }
 
 
-/*--------------------------------------FOOTER SECTION----------------------------------------*/
+/*----------------------------------------FOOTER SECTION-------------------------------------------*/
+.footer-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 70px 100px;
+}
+
+.footer-company{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-links{
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
+
+.individual-footer-link{
+  margin: 20px 30px;
+}
+
+
 
 /*------------------------------------------------- MEDIA QUERIES Mobile from 420px to 1024px----------------------------------------------*/
 @media (max-width: 1024px) {
@@ -502,7 +530,7 @@ h4 {
     grid-row: 2;
   }
 
-  /*---SECTION 3 - PROJECT SECTION---*/
+/*---SECTION 3 - PROJECT SECTION---*/
   .project-section {
     margin: 130px 50px;
   }
@@ -511,7 +539,7 @@ h4 {
     margin-bottom: 50px;
   }
 
-  /*---SECTION 4 - TESTIMONIAL SECTION---*/
+/*---SECTION 4 - TESTIMONIAL SECTION---*/
   .testimonial-section {
     margin-bottom: 100px;
   }
@@ -528,6 +556,17 @@ h4 {
 
 .individual-service {
   width: 45%;
+}
+
+/*---SECTION 6 - SUBSCRIBE SECTION---*/
+.subscribe-section{
+  margin: 0px auto 80px;
+}
+
+/*---FOOTER SECTION---*/
+.footer-section{
+  margin: 50px 40px;
+  justify-content: space-around;
 }
 
 }
@@ -553,10 +592,9 @@ h4 {
   width: 100%;
 }
 
-/*---CTION 6 - SUBSCRIBE SECTION---*/
+/*---SECTION 6 - SUBSCRIBE SECTION---*/
 .subscribe-section{
   max-width: 100%;
-  margin: 0px auto 100px;
 }
 
 .subscribe-form{
@@ -566,6 +604,24 @@ h4 {
 
 .subscribe-btn{
   height: 70px;
+}
+
+
+/*---FOOTER SECTION---*/
+.footer-section{
+  flex-flow: wrap;
+  justify-content: center;
+  margin: 30px 50px 100px;
+}
+
+.footer-company{
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.individual-footer-link{
+  margin: 10px 30px;
 }
 
 }
@@ -653,7 +709,7 @@ h4 {
   margin-bottom: 30px;
 }
 
-/*---CTION 6 - SUBSCRIBE SECTION---*/
+/*---SECTION 6 - SUBSCRIBE SECTION---*/
 .subscribe-section{
   margin-bottom: 50px;
 }
@@ -665,5 +721,11 @@ h4 {
 .subscribe-btn{
   width: 95%;
 }
+
+/*---FOOTER SECTION---*/
+.footer-section{
+  margin: 30px 50px 50px;
+}
+
 
 }
