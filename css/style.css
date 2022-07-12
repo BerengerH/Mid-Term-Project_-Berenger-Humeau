@@ -415,6 +415,26 @@ h4 {
   margin: 20px 0px 50px;
 }
 
+
+/*--------------------------------------PROJECTS PAGE - MAIN PROJECT SECTION----------------------------------------*/
+.main-project-section {
+  margin: 150px 100px;
+}
+
+.main-project-img{
+  height: 470px;
+  width: 100%;
+  margin: 80px auto;
+}
+
+.main-project-theme-date{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+  margin-top: 20px;
+}
+
+
 /*----------------------------------------CONTACT US PAGE - MAIN SECTION-------------------------------------------*/
 .contact-us-section{
   margin: 120px 100px;
@@ -608,6 +628,21 @@ h4 {
   margin: 0px auto 80px;
 }
 
+/*---PROJECTS PAGE - MAIN PROJECT SECTION---*/
+.main-project-section {
+  margin: 100px 50px;
+}
+
+.main-project-img{
+  height: 370px;
+  margin: 50px auto;
+}
+
+.main-project-theme-date{
+  margin-top: 10px;
+}
+
+
 /*---FOOTER SECTION---*/
 .footer-section{
   margin: 50px 40px;
@@ -618,6 +653,15 @@ h4 {
 
 /*------------------------------------------------- MEDIA QUERIES Mobile max-width 760px----------------------------------------------*/
 @media (max-width: 760px) {
+  /*---SECTION 3 - PROJECT SECTION---*/
+  .individual-project{
+    width: 100%;
+  }
+
+  .project-img{
+    width: 100%;
+  }
+  
   /*---SECTION 4 - TESTIMONIAL SECTION---*/
   .testimonial-container {
     gap: 90px;
