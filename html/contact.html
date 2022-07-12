@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mid-Term Project_Contact page_Bérenger Humeau</title>
+    <link rel="stylesheet" href="/css/style.css" />
+
+</head>
+<body>
+    <!-- Nav bar section -->
+    <nav class="nav-bar">
+        <div>
+          <a class="nav-link" href="/html/index.html">
+            <img class="circle-logo" src="/images/logos/circle.svg" alt="Circle logo" />
+          </a>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-menu-item headline-medium">
+            <a class="nav-link" href="/html/index.html">Home</a>
+          </li>
+          <li class="nav-menu-item headline-medium">
+            <a class="nav-link" href="/html/projects.html">Projects</a>
+          </li>
+          <li class="nav-menu-item headline-medium">
+            <a class="nav-link" href="/html/services.html">Services</a>
+          </li>
+        </ul>
+        <div class="burger">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </div>
+        <div class="nav-contact">
+          <a href="/html/contact.html">
+            <button class="btn contact-btn">Contact Us</button>
+          </a>
+        </div>
+      </nav>
+  
+      <!-- Section 1 - Contact Form section -->
+      <section class="contact-us-section">
+        <h1>Contact Us</h1>
+        <form action="" method="" class="contact-us-form">
+            <div class="contact-us-input-div">
+                <label class="body-regular" for="name">Full Name</label>
+                <input class="contact-us-input-short contact-us-input-content" type="text" name="name" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="contact-us-email-phone">
+                <div class="contact-us-input-div">
+                    <label class="body-regular" for="email">Email</label>
+                    <input class="contact-us-input-short contact-us-input-content" type="email" name="email" id="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="contact-us-input-div">
+                    <label class="body-regular" for="phone">Phone</label>
+                    <input class="contact-us-input-short contact-us-input-content" type="tel" name="phone" id="phone" placeholder="Enter your phone number" required>
+                </div>
+            </div>
+            <div class="contact-us-input-div">
+                <label class="body-regular" for="message">Message</label>
+                <textarea class="contact-us-input-content" name="message" id="message" cols="30" rows="10" placeholder="Write your message here..." required></textarea>
+            </div>
+            <input class="btn submit-btn" type="submit" value="Submit">
+        </form>
+      </section>
+
+      <!-- Footer section -->
+      <footer class="footer-section">
+        <div class="footer-company">
+          <img class="circle-logo" src="/images/logos/circle.svg" alt="Circle logo" />
+          <div class="company-address">
+            <p class="address-line-1 headline-regular">2972 Westheimer Rd. Santa Ana,</p>
+            <p class="address-line-2 headline-regular">Illinois 85486</p>
+          </div>
+        </div>
+        <div class="footer-links">
+            <a class="individual-footer-link" href="#">Team</a>
+            <a class="individual-footer-link" href="#">Services</a>
+            <a class="individual-footer-link" href="#">About Us</a>
+            <a class="individual-footer-link" href="#">Press</a>
+            <a class="individual-footer-link" href="#">Projects</a>
+            <a class="individual-footer-link" href="#">Privacy Policy</a>
+        </div>
+    <script type="text/javascript" src="/js/contact.js"></script>
+</body>
+</html>

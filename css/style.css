@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
 body {
   background-color: #f2f4fc;
   font-family: "Roboto", sans-serif;
@@ -118,9 +120,9 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 70px 100px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  margin: 70px 100px 70px 70px;
+  transition: 0.3s ease-in-out;
+  /*Look for some transition / animation to get a X to close the burger menu*/
 }
 
 .nav-link,
@@ -413,6 +415,48 @@ h4 {
   margin: 20px 0px 50px;
 }
 
+/*----------------------------------------CONTACT US PAGE - MAIN SECTION-------------------------------------------*/
+.contact-us-section{
+  margin: 120px 100px;
+}
+
+.contact-us-form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  gap: 40px;
+}
+
+.contact-us-email-phone{
+  display: flex;
+  gap: 40px;
+}
+
+.contact-us-input-div{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.contact-us-input-content{
+  background-color: rgba(107, 112, 141, 0.1);
+  border: none;
+  padding-left: 20px;
+}
+
+.contact-us-input-div textarea{
+  padding-top: 20px;
+}
+
+.contact-us-input-short{
+  height: 60px;
+}
+
+.submit-btn{
+  height: 80px;
+}
+
 
 /*----------------------------------------FOOTER SECTION-------------------------------------------*/
 .footer-section{
@@ -439,22 +483,23 @@ h4 {
 
 
 
-/*------------------------------------------------- MEDIA QUERIES Mobile from 420px to 1024px----------------------------------------------*/
+
+/*------------------------------------------------- MEDIA QUERIES Mobile 1024px----------------------------------------------*/
 @media (max-width: 1024px) {
   /*---NAV SECTION---*/
   .burger {
     display: block;
   }
 
-  .burger.active .bar:nth-child(2) {
+  .burger.active .burger-bar:nth-child(2) {
     opacity: 0;
   }
 
-  .burger.active .bar:nth-child(1) {
+  .burger.active .burger-bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
 
-  .burger.active .bar:nth-child(3) {
+  .burger.active .burger-bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 
@@ -606,6 +651,22 @@ h4 {
   height: 70px;
 }
 
+/*---CONTACT US PAGE - MAIN SECTION---*/
+.contact-us-section{
+  margin: 90px 40px;
+}
+
+.contact-us-form{
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.contact-us-email-phone{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 
 /*---FOOTER SECTION---*/
 .footer-section{
@@ -720,6 +781,23 @@ h4 {
 
 .subscribe-btn{
   width: 95%;
+}
+
+/*---CONTACT US PAGE - MAIN SECTION---*/
+.contact-us-section{
+  margin: 90px 30px;
+}
+
+.contact-us-form{
+  margin-top: 30px;
+}
+
+.contact-us-input-div{
+  gap: 5px;
+}
+
+.submit-btn{
+  height: 60px;
 }
 
 /*---FOOTER SECTION---*/
