@@ -1,7 +1,7 @@
 
 
 
-//---------------------------------SECTION RELATED TO THE BURGER MENU
+//---------------------------------SECTION RELATED TO THE BURGER MENU---------------------
 const burger = document.querySelector(".burger");
 const navMenu = document.querySelector(".nav-menu");
 const navMenuLink = document.querySelectorAll(".nav-menu-item");

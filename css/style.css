@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
+/*--------------------------------------GENERAL STYLING----------------------------------------*/
 body {
   background-color: #f2f4fc;
   font-family: "Roboto", sans-serif;
@@ -35,7 +36,7 @@ a {
 }
 
 
-/*--------------------------------------FONT styles, weight ...----------------------------------------*/
+/*--------------------------------------FONTS----------------------------------------*/
 h1 {
   color: #292e47;
   font-size: 60px;
@@ -102,6 +103,9 @@ h4 {
   margin: 0;
 }
 
+
+
+
 /*--------------------------------------NAV SECTION----------------------------------------*/
 .burger {
   display: none;
@@ -144,6 +148,11 @@ h4 {
   justify-content: space-around;
   gap: 60px;
 }
+
+.nav-menu-contact-item{
+  display: none;
+}
+
 
 /*--------------------------------------SECTION 1 - HERO SECTION----------------------------------------*/
 .hero-images {
@@ -523,6 +532,14 @@ h4 {
     transform: translateY(-8px) rotate(-45deg);
   }
 
+  .nav-bar {
+    margin: 50px 55px 50px 25px;
+  }
+  
+  .nav-contact {
+    display: none;
+  }
+
   .nav-menu {
     background-color: #f2f4fc;
     position: fixed;
@@ -540,12 +557,8 @@ h4 {
     left: 0;
   }
 
-  .nav-contact {
-    display: none;
-  }
-
-  .nav-bar {
-    margin: 50px 50px;
+  .nav-menu-contact-item{
+    display: block;
   }
 
   /*---SECTION 1 - HERO SECTION---*/
@@ -628,14 +641,20 @@ h4 {
   margin: 0px auto 80px;
 }
 
+/*---CONTACT US PAGE - MAIN SECTION---*/
+.contact-us-section{
+  margin: 90px 50px;
+}
+
+
 /*---PROJECTS PAGE - MAIN PROJECT SECTION---*/
 .main-project-section {
   margin: 100px 50px;
 }
 
 .main-project-img{
-  height: 370px;
-  margin: 50px auto;
+  height: 300px;
+  margin: 40px auto;
 }
 
 .main-project-theme-date{
@@ -697,7 +716,7 @@ h4 {
 
 /*---CONTACT US PAGE - MAIN SECTION---*/
 .contact-us-section{
-  margin: 90px 40px;
+  margin: 90px 50px;
 }
 
 .contact-us-form{
@@ -744,7 +763,7 @@ h4 {
   }
 
   .nav-bar {
-    margin: 30px 30px;
+    margin: 30px 40px 30px 15px;
   }
 
   /*---SECTION 1 - HERO SECTION---*/
