@@ -35,6 +35,15 @@ a {
   width: 100px;
 }
 
+.form-error{
+  border: 1px solid red;
+}
+
+.form-success{
+  border: 1px solid green;
+}
+
+
 
 /*--------------------------------------FONTS----------------------------------------*/
 h1 {
@@ -103,6 +112,13 @@ h4 {
   margin: 0;
 }
 
+.form-error-message{
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 0;
+  color: red;
+}
 
 
 
