@@ -44,9 +44,15 @@ const showSuccess = (input) => {
 
   formField.classList.remove("form-error");
   formField.classList.add("form-success");
-
-  // Maybe give a "success message" later on
 };
+
+//Function to change form into a success message after submition
+function submitionMessage(){
+  const formSection = document.querySelector(".contact-us-form");
+
+  formSection.classList.add("submit-success");
+  formSection.textContent = "Thank you for submiting your message! We will contact you back as soon as possible."
+}
 
 //Function to verify if input field is empty
 function isRequiered(input) {
@@ -162,7 +168,6 @@ form.addEventListener("submit", function (event) {
     isNameValid && isEmailValid && isPhoneValid && isMessageValid;
 
   if (isFormValid) {
-    alert("Thank you for submiting your message");
 
     fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
@@ -176,8 +181,12 @@ form.addEventListener("submit", function (event) {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((response) => {
+        console.log('response.status', response.status);
+        if (response.status === 201){
+          submitionMessage();
+        }
+      })
       .catch(errorSubmit => console.log('Submit failed', errorSubmit));
   }
 });

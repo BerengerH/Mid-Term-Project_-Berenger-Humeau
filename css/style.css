@@ -120,6 +120,15 @@ h4 {
   color: red;
 }
 
+.subscribe-error-message{
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 0;
+  color: red;
+}
+
 
 
 /*--------------------------------------NAV SECTION----------------------------------------*/
@@ -440,6 +449,14 @@ h4 {
   margin: 20px 0px 50px;
 }
 
+.subscribe-success{
+  background-color: #e4e6f0;
+  width: 400px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /*--------------------------------------PROJECTS PAGE - MAIN PROJECT SECTION----------------------------------------*/
 .main-project-section {
@@ -500,6 +517,12 @@ h4 {
 
 .submit-btn{
   height: 80px;
+}
+
+.submit-success{
+  background-color: #e4e6f0;
+  padding: 30px;
+  text-align: center;
 }
 
 
