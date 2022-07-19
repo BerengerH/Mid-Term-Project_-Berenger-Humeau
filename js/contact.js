@@ -18,7 +18,8 @@ navMenuLink.forEach((el) =>
   })
 );
 
-//---------------------------------SECTION RELATED TO FORM---------------------
+
+//-------------------------------SECTION RELATED TO FORM SUBMITION-----------------------
 const name = document.querySelector("#name");
 const email = document.querySelector("#email");
 const phone = document.querySelector("#phone");
