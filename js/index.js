@@ -31,7 +31,9 @@ const individualProjectsImg = document.querySelectorAll(".project-img");
 //Function to update the content of each one of the other projects
 function updateProjects(dataArray) {
   dataArray.forEach((element, index) => {
-    const newOtherTitle = element.title.slice(0, 15);
+    const upperCaseTitle = element.title.slice(0, 1).toUpperCase();
+    const lowerCaseTitle = element.title.slice(1, 15).toLowerCase();
+    const newOtherTitle = upperCaseTitle + lowerCaseTitle;
 
     individualProjectsTitle[index].textContent = newOtherTitle;
   });

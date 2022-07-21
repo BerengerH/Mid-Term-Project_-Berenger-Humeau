@@ -21,7 +21,6 @@ navMenuLink.forEach((el) =>
 //---------------------------------SECTION RELATED TO PROJECT CONTENT---------------------
 // As the API is a fake one, not specifically made for this project I decided to slice some of the data imported
 
-
 //Variables selecting the main project elements
 const mainProjectTitle = document.querySelector(".main-project-section h1");
 const mainProjectTheme = document.querySelector(".main-project-theme");
@@ -33,7 +32,10 @@ const mainProjectDescription = document.querySelector(
 
 //Function to update the content of the Main Project
 function updateMainProject(data1) {
-  const newTitle = data1.title.slice(0, 15);
+  const upperCaseTitle = data1.title.slice(0, 1).toUpperCase();
+  const lowerCaseTitle = data1.title.slice(1, 15).toLowerCase();
+  const newTitle = upperCaseTitle + lowerCaseTitle;
+
   const newDescription = data1.body;
 
   mainProjectTitle.textContent = newTitle;
@@ -41,15 +43,21 @@ function updateMainProject(data1) {
 }
 
 //Variables selecting the other projects elements in a node array
-const individualProjectsTitle = document.querySelectorAll(".individual-projects-title");
-const individualProjectsDescription = document.querySelectorAll(".individual-projects-description");
+const individualProjectsTitle = document.querySelectorAll(
+  ".individual-projects-title"
+);
+const individualProjectsDescription = document.querySelectorAll(
+  ".individual-projects-description"
+);
 const individualProjectsImg = document.querySelectorAll(".individual-img");
 
 //Function to update the content of each one of the other projects
 function updateOtherProjects(dataArray) {
   dataArray.forEach((element, index) => {
-    const newOtherTitle = element.title.slice(0, 15);
-  
+    const upperCaseTitle = element.title.slice(0, 1).toUpperCase();
+    const lowerCaseTitle = element.title.slice(1, 15).toLowerCase();
+    const newOtherTitle = upperCaseTitle + lowerCaseTitle;
+
     individualProjectsTitle[index].textContent = newOtherTitle;
   });
 }
@@ -65,16 +73,15 @@ window.addEventListener("load", () => {
       console.log("We could not get the data", errorGettingData)
     );
 
-    fetch("https://jsonplaceholder.typicode.com/posts/")
+  fetch("https://jsonplaceholder.typicode.com/posts/")
     .then((response) => response.json())
     .then((data) => {
-        updateOtherProjects(data);
+      updateOtherProjects(data);
     })
     .catch((errorGettingData) =>
       console.log("We could not get the data", errorGettingData)
     );
 });
-
 
 //---------------------------------SECTION RELATED TO SUBSCRIBE---------------------
 
@@ -153,7 +160,7 @@ form.addEventListener("submit", function (event) {
       },
     })
       .then((response) => {
-        console.log('response.status', response.status);
+        console.log("response.status", response.status);
         if (response.status === 201) {
           showSuccess(email);
         }
