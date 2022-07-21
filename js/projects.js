@@ -49,8 +49,6 @@ function updateMainProject(data1) {
   mainProjectDescription.textContent = newDescription;
 }
 
-
-
 //Variables selecting the other projects elements in a node array
 const individualProjectsTitle = document.querySelectorAll(
   ".individual-projects-title"
@@ -60,30 +58,42 @@ const individualProjectsTheme = document.querySelectorAll(
 );
 const individualProjectsImg = document.querySelectorAll(".project-img");
 
-//Function to update the content of each one of the other projects
+//Function to update the content of each one of the other projects showing random projects from the API
 function updateOtherProjects(dataArray) {
+  let randomNumber1 = Math.floor(Math.random() * (dataArray.length - 1) + 1);
+  let randomNumber2 = Math.floor(Math.random() * (dataArray.length - 1) + 1);
+  let randomNumber3 = Math.floor(Math.random() * (dataArray.length - 1) + 1);
 
-  dataArray.forEach((element, index) => {
-    if (index !== 0){
-    const upperCaseTitle = element.title.slice(0, 1).toUpperCase();
-    const lowerCaseTitle = element.title.slice(1, 15).toLowerCase();
-    const newOtherTitle = upperCaseTitle + lowerCaseTitle;
+  while (randomNumber1 === randomNumber2) {
+    randomNumber2 = Math.floor(Math.random() * (dataArray.length - 1) + 1);
+  }
+  while (randomNumber2 === randomNumber3 || randomNumber1 === randomNumber3) {
+    randomNumber3 = Math.floor(Math.random() * (dataArray.length - 1) + 1);
+  }
 
-    const newTheme = element.theme;
-    const newImage = element.image;
-  
-    //Update the content
-    individualProjectsTitle[index - 1 ].textContent = newOtherTitle;
-    individualProjectsTheme[index - 1 ].textContent = newTheme;
-    individualProjectsImg[index - 1 ].src = newImage;
+  const randomNumbers = [randomNumber1, randomNumber2, randomNumber3];
+
+  for (i = 0; i < randomNumbers.length; i++) {
+    if (randomNumbers[i] !== 0) {
+      const x = randomNumbers[i];
+      const upperCaseTitle = dataArray[x].title.slice(0, 1).toUpperCase();
+      const lowerCaseTitle = dataArray[x].title.slice(1, 15).toLowerCase();
+      const newOtherTitle = upperCaseTitle + lowerCaseTitle;
+
+      const newTheme = dataArray[x].theme;
+      const newImage = dataArray[x].image;
+
+      //Update the content
+      individualProjectsTitle[i].textContent = newOtherTitle;
+      individualProjectsTheme[i].textContent = newTheme;
+      individualProjectsImg[i].src = newImage;
     }
-  });
+  }
 }
 
 //Event listener fetching for the API content and calling functions to update HTML
 window.addEventListener("load", () => {
-
-    /* Original fake API used before the creation of my own one
+  /* Original fake API used before the creation of my own one
     https://jsonplaceholder.typicode.com/posts */
 
   fetch("http://localhost:3000/posts/1")
