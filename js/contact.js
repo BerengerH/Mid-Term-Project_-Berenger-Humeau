@@ -18,7 +18,6 @@ navMenuLink.forEach((el) =>
   })
 );
 
-
 //-------------------------------SECTION RELATED TO FORM SUBMITION-----------------------
 const name = document.querySelector("#name");
 const email = document.querySelector("#email");
@@ -47,11 +46,12 @@ const showSuccess = (input) => {
 };
 
 //Function to change form into a success message after submition
-function submitionMessage(){
+function submitionMessage() {
   const formSection = document.querySelector(".contact-us-form");
 
   formSection.classList.add("submit-success");
-  formSection.textContent = "Thank you for submiting your message! We will contact you back as soon as possible."
+  formSection.textContent =
+    "Thank you for submiting your message! We will contact you back as soon as possible.";
 }
 
 //Function to verify if input field is empty
@@ -168,7 +168,6 @@ form.addEventListener("submit", function (event) {
     isNameValid && isEmailValid && isPhoneValid && isMessageValid;
 
   if (isFormValid) {
-
     fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
       body: JSON.stringify({
@@ -182,11 +181,15 @@ form.addEventListener("submit", function (event) {
       },
     })
       .then((response) => {
-        console.log('response.status', response.status);
-        if (response.status === 201){
+        console.log("response.status", response.status);
+        if (response.status === 201) {
           submitionMessage();
+        } else if (400 <= response.status < 500) {
+          console.log("Client error");
+        } else if (500 <= response.status < 600) {
+          console.log("Server error");
         }
       })
-      .catch(errorSubmit => console.log('Submit failed', errorSubmit));
+      .catch((errorSubmit) => console.log("Submit failed", errorSubmit));
   }
 });
