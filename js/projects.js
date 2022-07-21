@@ -36,35 +36,57 @@ function updateMainProject(data1) {
   const lowerCaseTitle = data1.title.slice(1, 15).toLowerCase();
   const newTitle = upperCaseTitle + lowerCaseTitle;
 
+  const newTheme = data1.theme;
+  const newDate = data1.date;
+  const newImage = data1.image;
   const newDescription = data1.body;
 
+  //Update the content
   mainProjectTitle.textContent = newTitle;
+  mainProjectTheme.textContent = newTheme;
+  mainProjectDate.textContent = newDate;
+  mainProjectImg.src = newImage;
   mainProjectDescription.textContent = newDescription;
 }
+
+
 
 //Variables selecting the other projects elements in a node array
 const individualProjectsTitle = document.querySelectorAll(
   ".individual-projects-title"
 );
-const individualProjectsDescription = document.querySelectorAll(
-  ".individual-projects-description"
+const individualProjectsTheme = document.querySelectorAll(
+  ".individual-projects-theme"
 );
-const individualProjectsImg = document.querySelectorAll(".individual-img");
+const individualProjectsImg = document.querySelectorAll(".project-img");
 
 //Function to update the content of each one of the other projects
 function updateOtherProjects(dataArray) {
+
   dataArray.forEach((element, index) => {
+    if (index !== 0){
     const upperCaseTitle = element.title.slice(0, 1).toUpperCase();
     const lowerCaseTitle = element.title.slice(1, 15).toLowerCase();
     const newOtherTitle = upperCaseTitle + lowerCaseTitle;
 
-    individualProjectsTitle[index].textContent = newOtherTitle;
+    const newTheme = element.theme;
+    const newImage = element.image;
+  
+    //Update the content
+    individualProjectsTitle[index - 1 ].textContent = newOtherTitle;
+    individualProjectsTheme[index - 1 ].textContent = newTheme;
+    individualProjectsImg[index - 1 ].src = newImage;
+    }
   });
 }
 
 //Event listener fetching for the API content and calling functions to update HTML
 window.addEventListener("load", () => {
-  fetch("https://jsonplaceholder.typicode.com/posts/1")
+
+    /* Original fake API used before the creation of my own one
+    https://jsonplaceholder.typicode.com/posts */
+
+  fetch("http://localhost:3000/posts/1")
     .then((response) => response.json())
     .then((data) => {
       updateMainProject(data);
@@ -73,7 +95,7 @@ window.addEventListener("load", () => {
       console.log("We could not get the data", errorGettingData)
     );
 
-  fetch("https://jsonplaceholder.typicode.com/posts/")
+  fetch("http://localhost:3000/posts/")
     .then((response) => response.json())
     .then((data) => {
       updateOtherProjects(data);

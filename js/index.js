@@ -35,13 +35,23 @@ function updateProjects(dataArray) {
     const lowerCaseTitle = element.title.slice(1, 15).toLowerCase();
     const newOtherTitle = upperCaseTitle + lowerCaseTitle;
 
+    const newTheme = element.theme;
+    const newImage = element.image;
+
+    //Update the content
     individualProjectsTitle[index].textContent = newOtherTitle;
+    individualProjectsTheme[index].textContent = newTheme;
+    individualProjectsImg[index].src = newImage;
   });
 }
 
 //Event listener fetching for the API content and calling functions to update HTML
 window.addEventListener("load", () => {
-  fetch("https://jsonplaceholder.typicode.com/posts/")
+
+    /* Original fake API used before the creation of my own one
+    https://jsonplaceholder.typicode.com/posts */
+
+  fetch("http://localhost:3000/posts/")
     .then((response) => response.json())
     .then((data) => {
       updateProjects(data);

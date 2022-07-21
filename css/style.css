@@ -244,6 +244,7 @@ h4 {
 
 .project-div {
   display: flex;
+  justify-content: space-between;
   flex-flow: wrap;
   gap: 30px;
 }
@@ -466,6 +467,7 @@ h4 {
 .main-project-img{
   height: 470px;
   width: 100%;
+  object-fit: cover;
   margin: 80px auto;
 }
 
