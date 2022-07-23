@@ -40,6 +40,8 @@ const showError = (input, message) => {
 //Function to add the success class to CSS and inform user of the correct input
 const showSuccess = (input) => {
   const formField = input.parentElement;
+  const error = formField.querySelector(".form-error-message");
+  error.textContent = "";
 
   formField.classList.remove("form-error");
   formField.classList.add("form-success");
