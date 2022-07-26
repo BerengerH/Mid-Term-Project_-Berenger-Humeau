@@ -21,7 +21,7 @@ navMenuLink.forEach((el) =>
 //---------------------------------SECTION RELATED TO PROJECT CONTENT---------------------
 
 const currentProjects = [];
-let id = localStorage.getItem('id') || 1;
+let id = localStorage.getItem("id") || 1;
 
 //Variables selecting the main project elements
 const mainProjectTitle = document.querySelector(".main-project-section h1");
@@ -64,7 +64,6 @@ const learnMore1 = document.querySelector(".learn-more-one");
 const learnMore2 = document.querySelector(".learn-more-two");
 const learnMore3 = document.querySelector(".learn-more-three");
 
-
 //Function to update the content of each one of the other projects showing random projects from the API
 function updateOtherProjects(dataArray) {
   let randomNumber1 = Math.floor(Math.random() * (dataArray.length - 1) + 1);
@@ -81,25 +80,25 @@ function updateOtherProjects(dataArray) {
   const randomNumbers = [randomNumber1, randomNumber2, randomNumber3];
 
   for (i = 0; i < randomNumbers.length; i++) {
-      const x = randomNumbers[i];
-      const upperCaseTitle = dataArray[x].title.slice(0, 1).toUpperCase();
-      const lowerCaseTitle = dataArray[x].title.slice(1, 15).toLowerCase();
-      const newOtherTitle = upperCaseTitle + lowerCaseTitle;
+    const x = randomNumbers[i];
+    const upperCaseTitle = dataArray[x].title.slice(0, 1).toUpperCase();
+    const lowerCaseTitle = dataArray[x].title.slice(1, 15).toLowerCase();
+    const newOtherTitle = upperCaseTitle + lowerCaseTitle;
 
-      const newTheme = dataArray[x].theme;
-      const newImage = dataArray[x].image;
+    const newTheme = dataArray[x].theme;
+    const newImage = dataArray[x].image;
 
-      //Update the content
-      individualProjectsTitle[i].textContent = newOtherTitle;
-      individualProjectsTheme[i].textContent = newTheme;
-      individualProjectsImg[i].src = newImage;
+    //Update the content
+    individualProjectsTitle[i].textContent = newOtherTitle;
+    individualProjectsTheme[i].textContent = newTheme;
+    individualProjectsImg[i].src = newImage;
 
     const projectId = dataArray[x].id;
 
     currentProjects.push({
       id: projectId,
-      title: newOtherTitle
-    })
+      title: newOtherTitle,
+    });
   }
 
   learnMore1.addEventListener("click", function (event) {
@@ -107,13 +106,13 @@ function updateOtherProjects(dataArray) {
     const id = currentPostId.id;
     localStorage.setItem("id", id);
   });
-  
+
   learnMore2.addEventListener("click", function (event) {
     const currentPostId = currentProjects[1];
     const id = currentPostId.id;
     localStorage.setItem("id", id);
   });
-  
+
   learnMore3.addEventListener("click", function (event) {
     const currentPostId = currentProjects[2];
     const id = currentPostId.id;
@@ -123,11 +122,11 @@ function updateOtherProjects(dataArray) {
 
 //Event listener fetching for the API content and calling functions to update HTML
 window.addEventListener("load", () => {
-  
-    fetch(`http://localhost:3000/posts/${id}`)
+  fetch(`http://localhost:3000/posts/${id}`)
     .then((response) => response.json())
     .then((data) => {
       updateMainProject(data);
+      localStorage.removeItem('id');
     })
     .catch((errorGettingData) =>
       console.log("We could not get the data", errorGettingData)
@@ -162,6 +161,8 @@ const showError = (input, message) => {
 //Function to add the success class to CSS and inform user of the subscription
 const showSuccess = (input) => {
   const formSection = document.querySelector(".subscribe-form");
+  const error = document.querySelector(".subscribe-error-message");
+  error.textContent = "";
 
   formSection.classList.remove("form-error");
   formSection.classList.add("subscribe-success");
@@ -219,7 +220,7 @@ form.addEventListener("submit", function (event) {
       },
     })
       .then((response) => {
-        console.log('response.status', response.status);
+        console.log("response.status", response.status);
         if (response.status === 201) {
           showSuccess(email);
         }

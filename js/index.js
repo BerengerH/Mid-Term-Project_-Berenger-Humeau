@@ -20,7 +20,7 @@ navMenuLink.forEach((el) =>
 
 //---------------------------------SECTION RELATED TO PROJECT CONTENT---------------------
 const currentProjects = [];
-let id = localStorage.getItem('id') || 1;
+let id = localStorage.getItem("id") || 1;
 
 //Variables selecting the projects elements in a node array
 const individualProjectsTitle = document.querySelectorAll(
@@ -54,39 +54,39 @@ function updateProjects(dataArray) {
 
     currentProjects.push({
       id: projectId,
-      title: newOtherTitle
-    })
+      title: newOtherTitle,
+    });
 
     learnMore1.addEventListener("click", function (event) {
-        const currentPostId = currentProjects[0];
-        const id = currentPostId.id;
-        localStorage.setItem("id", id);
-      });
-      
-      learnMore2.addEventListener("click", function (event) {
-        const currentPostId = currentProjects[1];
-        const id = currentPostId.id;
-        localStorage.setItem("id", id);
-      });
-      
-      learnMore3.addEventListener("click", function (event) {
-        const currentPostId = currentProjects[2];
-        const id = currentPostId.id;
-        localStorage.setItem("id", id);
-      });
+      const currentPostId = currentProjects[0];
+      const id = currentPostId.id;
+      localStorage.setItem("id", id);
+    });
+
+    learnMore2.addEventListener("click", function (event) {
+      const currentPostId = currentProjects[1];
+      const id = currentPostId.id;
+      localStorage.setItem("id", id);
+    });
+
+    learnMore3.addEventListener("click", function (event) {
+      const currentPostId = currentProjects[2];
+      const id = currentPostId.id;
+      localStorage.setItem("id", id);
+    });
   });
 }
 
 //Event listener fetching for the API content and calling functions to update HTML
 window.addEventListener("load", () => {
-
-    /* Original fake API used before the creation of my own one
+  /* Original fake API used before the creation of my own one
     https://jsonplaceholder.typicode.com/posts */
 
   fetch("http://localhost:3000/posts/")
     .then((response) => response.json())
     .then((data) => {
       updateProjects(data);
+      localStorage.removeItem('id');
     })
     .catch((errorGettingData) =>
       console.log("We could not get the data", errorGettingData)
@@ -112,6 +112,8 @@ const showError = (input, message) => {
 //Function to add the success class to CSS and inform user of the subscription
 const showSuccess = (input) => {
   const formSection = document.querySelector(".subscribe-form");
+  const error = document.querySelector(".subscribe-error-message");
+  error.textContent = "";
 
   formSection.classList.remove("form-error");
   formSection.classList.add("subscribe-success");
@@ -169,7 +171,7 @@ form.addEventListener("submit", function (event) {
       },
     })
       .then((response) => {
-        console.log('response.status', response.status);
+        console.log("response.status", response.status);
         if (response.status === 201) {
           showSuccess(email);
         }
