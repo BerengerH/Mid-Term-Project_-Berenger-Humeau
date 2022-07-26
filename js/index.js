@@ -19,6 +19,9 @@ navMenuLink.forEach((el) =>
 );
 
 //---------------------------------SECTION RELATED TO PROJECT CONTENT---------------------
+const currentProjects = [];
+let id = localStorage.getItem('id') || 1;
+
 //Variables selecting the projects elements in a node array
 const individualProjectsTitle = document.querySelectorAll(
   ".individual-projects-title"
@@ -27,6 +30,10 @@ const individualProjectsTheme = document.querySelectorAll(
   ".individual-projects-theme"
 );
 const individualProjectsImg = document.querySelectorAll(".project-img");
+
+const learnMore1 = document.querySelector(".learn-more-one");
+const learnMore2 = document.querySelector(".learn-more-two");
+const learnMore3 = document.querySelector(".learn-more-three");
 
 //Function to update the content of each one of the other projects
 function updateProjects(dataArray) {
@@ -42,6 +49,31 @@ function updateProjects(dataArray) {
     individualProjectsTitle[index].textContent = newOtherTitle;
     individualProjectsTheme[index].textContent = newTheme;
     individualProjectsImg[index].src = newImage;
+
+    const projectId = dataArray[index].id;
+
+    currentProjects.push({
+      id: projectId,
+      title: newOtherTitle
+    })
+
+    learnMore1.addEventListener("click", function (event) {
+        const currentPostId = currentProjects[0];
+        const id = currentPostId.id;
+        localStorage.setItem("id", id);
+      });
+      
+      learnMore2.addEventListener("click", function (event) {
+        const currentPostId = currentProjects[1];
+        const id = currentPostId.id;
+        localStorage.setItem("id", id);
+      });
+      
+      learnMore3.addEventListener("click", function (event) {
+        const currentPostId = currentProjects[2];
+        const id = currentPostId.id;
+        localStorage.setItem("id", id);
+      });
   });
 }
 

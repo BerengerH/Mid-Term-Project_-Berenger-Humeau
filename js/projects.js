@@ -20,6 +20,9 @@ navMenuLink.forEach((el) =>
 
 //---------------------------------SECTION RELATED TO PROJECT CONTENT---------------------
 
+const currentProjects = [];
+let id = localStorage.getItem('id') || 1;
+
 //Variables selecting the main project elements
 const mainProjectTitle = document.querySelector(".main-project-section h1");
 const mainProjectTheme = document.querySelector(".main-project-theme");
@@ -57,6 +60,11 @@ const individualProjectsTheme = document.querySelectorAll(
 );
 const individualProjectsImg = document.querySelectorAll(".project-img");
 
+const learnMore1 = document.querySelector(".learn-more-one");
+const learnMore2 = document.querySelector(".learn-more-two");
+const learnMore3 = document.querySelector(".learn-more-three");
+
+
 //Function to update the content of each one of the other projects showing random projects from the API
 function updateOtherProjects(dataArray) {
   let randomNumber1 = Math.floor(Math.random() * (dataArray.length - 1) + 1);
@@ -73,7 +81,6 @@ function updateOtherProjects(dataArray) {
   const randomNumbers = [randomNumber1, randomNumber2, randomNumber3];
 
   for (i = 0; i < randomNumbers.length; i++) {
-    if (randomNumbers[i] !== 0) {
       const x = randomNumbers[i];
       const upperCaseTitle = dataArray[x].title.slice(0, 1).toUpperCase();
       const lowerCaseTitle = dataArray[x].title.slice(1, 15).toLowerCase();
@@ -86,14 +93,38 @@ function updateOtherProjects(dataArray) {
       individualProjectsTitle[i].textContent = newOtherTitle;
       individualProjectsTheme[i].textContent = newTheme;
       individualProjectsImg[i].src = newImage;
-    }
+
+    const projectId = dataArray[x].id;
+
+    currentProjects.push({
+      id: projectId,
+      title: newOtherTitle
+    })
   }
+
+  learnMore1.addEventListener("click", function (event) {
+    const currentPostId = currentProjects[0];
+    const id = currentPostId.id;
+    localStorage.setItem("id", id);
+  });
+  
+  learnMore2.addEventListener("click", function (event) {
+    const currentPostId = currentProjects[1];
+    const id = currentPostId.id;
+    localStorage.setItem("id", id);
+  });
+  
+  learnMore3.addEventListener("click", function (event) {
+    const currentPostId = currentProjects[2];
+    const id = currentPostId.id;
+    localStorage.setItem("id", id);
+  });
 }
 
 //Event listener fetching for the API content and calling functions to update HTML
 window.addEventListener("load", () => {
   
-    fetch(`http://localhost:3000/posts/1`)
+    fetch(`http://localhost:3000/posts/${id}`)
     .then((response) => response.json())
     .then((data) => {
       updateMainProject(data);
