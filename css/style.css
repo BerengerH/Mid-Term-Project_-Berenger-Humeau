@@ -127,8 +127,8 @@ h4 {
   line-height: 16px;
   margin: 0;
   color: red;
+  margin: 15px;
 }
-
 
 
 /*--------------------------------------NAV SECTION----------------------------------------*/
@@ -149,9 +149,8 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 70px 100px 70px 70px;
+  margin: 70px;
   transition: 0.3s ease-in-out;
-  /*Look for some transition / animation to get a X to close the burger menu*/
 }
 
 .nav-link,

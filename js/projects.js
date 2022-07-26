@@ -19,7 +19,6 @@ navMenuLink.forEach((el) =>
 );
 
 //---------------------------------SECTION RELATED TO PROJECT CONTENT---------------------
-// As the API is a fake one, not specifically made for this project I decided to slice some of the data imported
 
 //Variables selecting the main project elements
 const mainProjectTitle = document.querySelector(".main-project-section h1");
@@ -49,7 +48,7 @@ function updateMainProject(data1) {
   mainProjectDescription.textContent = newDescription;
 }
 
-//Variables selecting the other projects elements in a node array
+//Variables selecting the other projects elements
 const individualProjectsTitle = document.querySelectorAll(
   ".individual-projects-title"
 );
@@ -93,10 +92,8 @@ function updateOtherProjects(dataArray) {
 
 //Event listener fetching for the API content and calling functions to update HTML
 window.addEventListener("load", () => {
-  /* Original fake API used before the creation of my own one
-    https://jsonplaceholder.typicode.com/posts */
-
-  fetch("http://localhost:3000/posts/1")
+  
+    fetch(`http://localhost:3000/posts/1`)
     .then((response) => response.json())
     .then((data) => {
       updateMainProject(data);
