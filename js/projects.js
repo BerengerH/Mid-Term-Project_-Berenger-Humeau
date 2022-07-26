@@ -115,7 +115,6 @@ window.addEventListener("load", () => {
 //---------------------------------SECTION RELATED TO SUBSCRIBE---------------------
 
 const email = document.querySelector(".email-input");
-
 const form = document.querySelector(".subscribe-form");
 
 //Function to add the error class to CSS and inform user of the error
@@ -125,7 +124,7 @@ const showError = (input, message) => {
   formField.classList.remove("subscribe-success");
   formField.classList.add("form-error");
 
-  const error = document.querySelector(".subscribe-form p");
+  const error = document.querySelector(".subscribe-error-message");
   error.textContent = message;
 };
 
@@ -189,7 +188,7 @@ form.addEventListener("submit", function (event) {
       },
     })
       .then((response) => {
-        console.log("response.status", response.status);
+        console.log('response.status', response.status);
         if (response.status === 201) {
           showSuccess(email);
         }
